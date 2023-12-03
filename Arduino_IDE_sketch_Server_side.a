@@ -1,0 +1,35 @@
+#include <ESP8266WiFi.h>
+#include <ESP8266WebServer.h>
+
+const char *ssid = "Nikhilesh Reddy";
+const char *password = "jagat12345";
+
+ESP8266WebServer server(80);
+
+void setup() {
+  Serial.begin(115200);
+
+  // Connect to Wi-Fi
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
+  }
+  Serial.println("Connected to WiFi");
+
+  // Define server endpoints
+  server.on("/", HTTP_GET, handleRoot);
+
+  // Start server
+  server.begin();
+  Serial.println("HTTP server started");
+}
+
+void loop() {
+  server.handleClient();
+}
+
+void handleRoot() {
+  String message = "Hello from NodeMCU!";
+  server.send(200, "text/plain", message);
+}
