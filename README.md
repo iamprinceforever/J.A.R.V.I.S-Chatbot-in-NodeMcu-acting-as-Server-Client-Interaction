@@ -24,4 +24,4 @@ The code begins to upload into the nodemcu and after you get wifi is connected. 
 ![image](https://github.com/iamprinceforever/J.A.R.V.I.S-Chatbot-in-NodeMcu-acting-as-Server-Client-Interaction/assets/62882008/7a4746ec-8ff0-4f08-925d-46597a48a6b3)
 
 
-Note: Use your own API key from GPT-3
+Note: Use your own API key from GPT-4
